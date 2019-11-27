@@ -131,7 +131,7 @@ void rtc_thread( mico_thread_arg_t arg )
 
 
     mico_utc_time_t utc_time;
-    mico_utc_time_t utc_time_last;
+    mico_utc_time_t utc_time_last = -1;
     while ( 1 )
     {   //上电后连接了wifi才开始走时否则等待连接
         micoWlanGetLinkStatus( &LinkStatus );
@@ -156,7 +156,7 @@ void rtc_thread( mico_thread_arg_t arg )
 
         if ( utc_time_last != utc_time )
         {
-            utc_time_last == utc_time;
+            utc_time_last = utc_time;
             total_time++;
         }
 

@@ -49,7 +49,7 @@ void udp_thread( void *arg )
     p_udp_send_msg_t p_send_msg = NULL;
     int msg_send_event_fd = -1;
     char ip_address[16];
-    uint8_t *buf = NULL;
+    char *buf = NULL;
 
     /* create udp msg send queue */
     err = mico_rtos_init_queue( &udp_msg_send_queue, "uqp_msg_send_queue", sizeof(p_udp_send_msg_t),
@@ -125,7 +125,7 @@ void udp_thread( void *arg )
 static OSStatus udp_msg_send( int socket, const unsigned char* msg, uint32_t msg_len )
 {
     OSStatus err = kUnknownErr;
-    int ret = 0;
+//    int ret = 0;
 
     require( msg_len && msg, exit );
 

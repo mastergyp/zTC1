@@ -171,11 +171,11 @@ int application_start( void )
         {
             power_last = power;
             main_num =0;
-            uint8_t *power_buf = NULL;
+            char *power_buf = NULL;
             power_buf = malloc( 128 );
             if ( power_buf != NULL )
             {
-                sprintf( power_buf, "{\"mac\":\"%s\",\"power\":\"%d.%d\",\"total_time\":%d}", strMac, power / 10, power % 10, total_time );
+                sprintf( power_buf, "{\"mac\":\"%s\",\"power\":\"%lu.%lu\",\"total_time\":%lu}", strMac, power / 10, power % 10, total_time );
                 user_send( 0, power_buf );
                 free( power_buf );
             }

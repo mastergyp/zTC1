@@ -71,8 +71,8 @@ static void key_long_press( void )
 
 static void key_long_10s_press( void )
 {
-    OSStatus err;
-    char i = 0;
+//    OSStatus err;
+//    char i = 0;
     os_log( "WARNGIN: user params restored!" );
 //    for ( i = 0; i < 3; i++ )
 //    {
@@ -88,7 +88,7 @@ static void key_long_10s_press( void )
 static void key_short_press( void )
 {
     char i;
-    OSStatus err;
+//    OSStatus err;
 
     if ( relay_out() )
     {
@@ -166,6 +166,7 @@ static void key_timeout_handler( void* arg )
         key_last = 0;
         mico_rtos_stop_timer( &user_key_timer );
     }
+    os_log("%d", key_last);
 }
 
 static void key_falling_irq_handler( void* arg )

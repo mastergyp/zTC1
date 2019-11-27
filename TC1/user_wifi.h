@@ -5,7 +5,7 @@
 
 #include "mico.h"
 #include "MiCOKit_EXT.h"
-
+#include "user_function.h"
 
 enum {
    WIFI_STATE_FAIL,
